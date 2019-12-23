@@ -13,11 +13,14 @@
 
 #### Stories
 
-| Field | Type    | Notes                                 |
-| ----- | ------- | ------------------------------------- |
-| id    | integer | _primary key_ and _autoincrements_    |
-| name  | string  | _required_; name of the refugee/story |
-| story | text    | _required_; story of the refugee      |
+| Field           | Type    | Notes                                                                             |
+| --------------- | ------- | --------------------------------------------------------------------------------- |
+| id              | integer | _primary key_ and _autoincrements_                                                |
+| story name      | string  | _required_; name of the refugee/story                                             |
+| story image URL | string  | _required_; refugee/story image                                                   |
+| story content   | text    | _required_; story of the refugee                                                  |
+| author          | text    | _required_; author of the story                                                   |
+| approved        | boolean | _required_; whether or not the story has been approved; defaults to false on POST |
 
 ## API
 
@@ -32,22 +35,22 @@ test account:
 
 #### Table of Contents
 
-| Type   | Path                          | Notes                                                | Example                              |
-| ------ | ----------------------------- | ---------------------------------------------------- | ------------------------------------ |
-| POST   | `/api/auth/register`          | register a new user                                  | [link](#post-apiauthregister)        |
-| POST   | `/api/auth/login`             | login a user                                         | [link](#post-apiauthlogin)           |
-| &nbsp; |                               |                                                      |                                      |
-| GET    | `/api/users/:user_id`         | get user info; requires authorization                | [link](#get-apiusersuser_id)         |
-| PUT    | `/api/users/:user_id`         | update user info; requires authorization             | [link](#put-apiusersuser_id)         |
-| DELETE | `/api/users/:user_id`         | delete a user account; requires authorization        | [link](#delete-apiusersuser_id)      |
-| &nbsp; |                               |                                                      |                                      |
-| GET    | `/api/users/:user_id/stories` | get user's approved stories; requires authorization  | [link](#get-apiusersuser_idstories)  |
-| POST   | `/api/users/:user_id/stories` | approve a new story; requires authorization;         | [link](#post-apiusersuser_idstories) |
-| &nbsp; |                               |                                                      |                                      |
-| POST   | `/api/stories`                | create/send a new story; requires `name` and `story` | [link](#post-apistories)             |
-| GET    | `/api/stories/:story_id`      | get information about a story                        | [link](#get-apistoriesstory_id)      |
-| PUT    | `/api/stories/:story_id`      | update a story;                                      | [link](#put-apistoriesstory_id)      |
-| DELETE | `/api/stories/:story_id`      | delete a created story;                              | [link](#delete-apistoriesstory_id)   |
+| Type   | Path                          | Notes                                                                 | Example                              |
+| ------ | ----------------------------- | --------------------------------------------------------------------- | ------------------------------------ |
+| POST   | `/api/auth/register`          | register a new user                                                   | [link](#post-apiauthregister)        |
+| POST   | `/api/auth/login`             | login a user                                                          | [link](#post-apiauthlogin)           |
+| &nbsp; |                               |                                                                       |                                      |
+| GET    | `/api/users/:user_id`         | get user info; requires authorization                                 | [link](#get-apiusersuser_id)         |
+| PUT    | `/api/users/:user_id`         | update user info; requires authorization                              | [link](#put-apiusersuser_id)         |
+| DELETE | `/api/users/:user_id`         | delete a user account; requires authorization                         | [link](#delete-apiusersuser_id)      |
+| &nbsp; |                               |                                                                       |                                      |
+| GET    | `/api/users/:user_id/stories` | get user's approved stories; requires authorization                   | [link](#get-apiusersuser_idstories)  |
+| PUT    | `/api/users/:user_id/stories` | change `approved` key to approve a new story; requires authorization; | [link](#post-apiusersuser_idstories) |
+| &nbsp; |                               |                                                                       |                                      |
+| POST   | `/api/stories`                | create/send a new story; requires `name` and `story`                  | [link](#post-apistories)             |
+| GET    | `/api/stories/:story_id`      | get information about a story                                         | [link](#get-apistoriesstory_id)      |
+| PUT    | `/api/stories/:story_id`      | update a story;                                                       | [link](#put-apistoriesstory_id)      |
+| DELETE | `/api/stories/:story_id`      | delete a created story;                                               | [link](#delete-apistoriesstory_id)   |
 
 ## Examples
 
@@ -150,24 +153,27 @@ response data
   {
     "id": 1,
     "name": "Name",
-    "story": "Story text"
+    "story": "Story text",
+    "approved": true
   },
   {
     "id": 2,
     "name": "Name",
-    "story": "Story text"
+    "story": "Story text",
+    "approved": false
   }
 ]
 ```
 
-#### POST /api/users/:user_id/stories
+#### PUT /api/users/:user_id/stories
 
 request data
 
 ```json
 {
   "name": "Name",
-  "story": "Story text"
+  "story": "Story text",
+  "approved": false
 }
 ```
 
@@ -177,7 +183,8 @@ response data
 {
   "id": 1,
   "name": "Name",
-  "story": "Story text"
+  "story": "Story text",
+  "approved": true
 }
 ```
 
@@ -197,7 +204,9 @@ response data
 ```json
 {
   "id": 1,
-  "message": "Thank you."
+  "name": "Name",
+  "story": "Story text",
+  "approved": false
 }
 ```
 
@@ -209,7 +218,8 @@ response data
 {
   "id": 1,
   "name": "Name",
-  "story": "Story text"
+  "story": "Story text",
+  "approved": false
 }
 ```
 
