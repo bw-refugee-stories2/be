@@ -13,14 +13,14 @@
 
 #### Stories
 
-| Field           | Type    | Notes                                                                             |
-| --------------- | ------- | --------------------------------------------------------------------------------- |
-| id              | integer | _primary key_ and _autoincrements_                                                |
-| story name      | string  | _required_; name of the refugee/story                                             |
-| story image URL | string  | _required_; refugee/story image                                                   |
-| story content   | text    | _required_; story of the refugee                                                  |
-| author          | text    | _required_; author of the story                                                   |
-| approved        | boolean | _required_; whether or not the story has been approved; defaults to false on POST |
+| Field     | Type    | Notes                                                                   |
+| --------- | ------- | ----------------------------------------------------------------------- |
+| id        | integer | _primary key_ and _autoincrements_                                      |
+| name      | string  | _required_; name of the refugee/story                                   |
+| image_URL | string  | _required_; refugee/story image                                         |
+| content   | text    | _required_; story of the refugee                                        |
+| author    | text    | _required_; author of the story                                         |
+| approved  | boolean | whether or not the story has been approved; defaults to _false_ on POST |
 
 ## API
 
@@ -39,6 +39,7 @@ test account:
 | ------ | ------------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------ |
 | POST   | `/api/auth/register`                 | register a new user                                                                   | [link](#post-apiauthregister)        |
 | POST   | `/api/auth/login`                    | login a user                                                                          | [link](#post-apiauthlogin)           |
+| POST   | `/api/queued_stories`                | create/send a new story; requires `name` and `content`                                | [link](#post-apistories)             |
 | &nbsp; |                                      |                                                                                       |                                      |
 | GET    | `/api/users/:user_id`                | get user info; requires authorization                                                 | [link](#get-apiusersuser_id)         |
 | PUT    | `/api/users/:user_id`                | update user info; requires authorization                                              | [link](#put-apiusersuser_id)         |
@@ -47,7 +48,6 @@ test account:
 | GET    | `/api/users/:user_id/queued_stories` | get queued stories; requires authorization                                            | [link](#get-apiusersuser_idstories)  |
 | PUT    | `/api/users/:user_id/queued_stories` | change `approved` key to approve or reject a submitted story; requires authorization; | [link](#post-apiusersuser_idstories) |
 | DELETE | `/api/users/:user_id/queued_stories` | delete a queued story; requires authorization;                                        | [link](#post-apiusersuser_idstories) |  |  |  |
-| POST   | `/api/queued_stories`                | create/send a new story; requires `name` and `story`                                  | [link](#post-apistories)             |
 | &nbsp; |
 | GET    | `/api/stories/:story_id`             | get information about a story                                                         | [link](#get-apistoriesstory_id)      |
 | PUT    | `/api/stories/:story_id`             | update a story;                                                                       | [link](#put-apistoriesstory_id)      |
