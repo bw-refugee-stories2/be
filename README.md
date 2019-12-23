@@ -17,9 +17,9 @@
 | --------- | ------- | ----------------------------------------------------------------------- |
 | id        | integer | _primary key_ and _autoincrements_                                      |
 | name      | string  | _required_; name of the refugee/story                                   |
-| image_URL | string  | _required_; refugee/story image                                         |
+| image_URL | string  | refugee/story image                                                     |
 | content   | text    | _required_; story of the refugee                                        |
-| author    | text    | _required_; author of the story                                         |
+| author    | text    | author of the story                                                     |
 | approved  | boolean | whether or not the story has been approved; defaults to _false_ on POST |
 
 ## API
