@@ -35,22 +35,22 @@ test account:
 
 #### Table of Contents
 
-| Type   | Path                          | Notes                                                                 | Example                              |
-| ------ | ----------------------------- | --------------------------------------------------------------------- | ------------------------------------ |
-| POST   | `/api/auth/register`          | register a new user                                                   | [link](#post-apiauthregister)        |
-| POST   | `/api/auth/login`             | login a user                                                          | [link](#post-apiauthlogin)           |
-| &nbsp; |                               |                                                                       |                                      |
-| GET    | `/api/users/:user_id`         | get user info; requires authorization                                 | [link](#get-apiusersuser_id)         |
-| PUT    | `/api/users/:user_id`         | update user info; requires authorization                              | [link](#put-apiusersuser_id)         |
-| DELETE | `/api/users/:user_id`         | delete a user account; requires authorization                         | [link](#delete-apiusersuser_id)      |
-| &nbsp; |                               |                                                                       |                                      |
-| GET    | `/api/users/:user_id/stories` | get user's approved stories; requires authorization                   | [link](#get-apiusersuser_idstories)  |
-| PUT    | `/api/users/:user_id/stories` | change `approved` key to approve a new story; requires authorization; | [link](#post-apiusersuser_idstories) |
-| &nbsp; |                               |                                                                       |                                      |
-| POST   | `/api/stories`                | create/send a new story; requires `name` and `story`                  | [link](#post-apistories)             |
-| GET    | `/api/stories/:story_id`      | get information about a story                                         | [link](#get-apistoriesstory_id)      |
-| PUT    | `/api/stories/:story_id`      | update a story;                                                       | [link](#put-apistoriesstory_id)      |
-| DELETE | `/api/stories/:story_id`      | delete a created story;                                               | [link](#delete-apistoriesstory_id)   |
+| Type   | Path                          | Notes                                                                                 | Example                              |
+| ------ | ----------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------ |
+| POST   | `/api/auth/register`          | register a new user                                                                   | [link](#post-apiauthregister)        |
+| POST   | `/api/auth/login`             | login a user                                                                          | [link](#post-apiauthlogin)           |
+| &nbsp; |                               |                                                                                       |                                      |
+| GET    | `/api/users/:user_id`         | get user info; requires authorization                                                 | [link](#get-apiusersuser_id)         |
+| PUT    | `/api/users/:user_id`         | update user info; requires authorization                                              | [link](#put-apiusersuser_id)         |
+| DELETE | `/api/users/:user_id`         | delete a user account; requires authorization                                         | [link](#delete-apiusersuser_id)      |
+| &nbsp; |                               |                                                                                       |                                      |
+| GET    | `/api/users/:user_id/stories` | get queued stories; requires authorization                                            | [link](#get-apiusersuser_idstories)  |
+| PUT    | `/api/users/:user_id/stories` | change `approved` key to approve or reject a submitted story; requires authorization; | [link](#post-apiusersuser_idstories) |
+| &nbsp; |                               |                                                                                       |                                      |
+| POST   | `/api/stories`                | create/send a new story; requires `name` and `story`                                  | [link](#post-apistories)             |
+| GET    | `/api/stories/:story_id`      | get information about a story                                                         | [link](#get-apistoriesstory_id)      |
+| PUT    | `/api/stories/:story_id`      | update a story;                                                                       | [link](#put-apistoriesstory_id)      |
+| DELETE | `/api/stories/:story_id`      | delete a created story;                                                               | [link](#delete-apistoriesstory_id)   |
 
 ## Examples
 
