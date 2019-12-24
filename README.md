@@ -145,7 +145,7 @@ response data
 no content
 ```
 
-#### GET /api/users/:user_id/stories
+#### GET /api/users/:user_id/queued_stories
 
 response data
 
@@ -166,7 +166,7 @@ response data
 ]
 ```
 
-#### PUT /api/users/:user_id/stories
+#### PUT /api/users/:user_id/queued_stories
 
 request data
 
