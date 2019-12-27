@@ -2,7 +2,7 @@
 
 ## Schema
 
-#### Users
+#### Admins
 
 | Field    | Type    | Notes                              |
 | -------- | ------- | ---------------------------------- |
@@ -35,24 +35,23 @@ test account:
 
 #### Table of Contents
 
-| Type   | Path                           | Notes                                                                                 | Example                              |
-| ------ | ------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------ |
-| POST   | `/api/auth/register`           | register a new admin                                                                  | [link](#post-apiauthregister)        |
-| POST   | `/api/auth/login`              | login a admin                                                                         | [link](#post-apiauthlogin)           |
-| POST   | `/api/stories`                 | create/send a new story; requires `name` and `content`                                | [link](#post-apistories)             |
-| &nbsp; |                                |                                                                                       |                                      |
-| GET    | `/api/admin/:admin_id`         | get admin info; requires authorization                                                | [link](#get-apiadminsadmin_id)       |
-| PUT    | `/api/admin/:admin_id`         | update admin info; requires authorization                                             | [link](#put-apiadminsadmin_id)       |
-| DELETE | `/api/admin/:admin_id`         | delete a admin account; requires authorization                                        | [link](#delete-apiadminsadmin_id)    |
-| &nbsp; |                                |                                                                                       |                                      |
-| GET    | `/api/admin/:admin_id/stories` | get ALL stories; requires authorization                                               | [link](#get-apiusersuser_idstories)  |
-| PUT    | `/api/admin/:admin_id/stories` | change `approved` key to approve or reject a submitted story; requires authorization; | [link](#post-apiusersuser_idstories) |
-| DELETE | `/api/admin/:admin_id/stories` | delete a story; requires authorization;                                               | [link](#post-apiusersuser_idstories) |  |  |  |
+| Type   | Path                                     | Notes                                                                                                 | Example                              |
+| ------ | ---------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| POST   | `/api/auth/register`                     | register a new admin                                                                                  | [link](#post-apiauthregister)        |
+| POST   | `/api/auth/login`                        | login an admin                                                                                        | [link](#post-apiauthlogin)           |
+| &nbsp; |                                          |                                                                                                       |                                      |
+| GET    | `/api/admin/:admin_id`                   | get admin info; requires authorization                                                                | [link](#get-apiadminsadmin_id)       |
+| PUT    | `/api/admin/:admin_id`                   | update admin info; requires authorization                                                             | [link](#put-apiadminsadmin_id)       |
+| DELETE | `/api/admin/:admin_id`                   | delete a admin account; requires authorization                                                        | [link](#delete-apiadminsadmin_id)    |
+| &nbsp; |                                          |                                                                                                       |                                      |
+| GET    | `/api/admin/:admin_id/stories`           | get ALL stories; requires authorization                                                               | [link](#get-apiusersuser_idstories)  |
+| GET    | `/api/admin/:admin_id/stories/:story_id` | get a story; requires authorization;                                                                  | [link](#post-apiusersuser_idstories) |
+| PUT    | `/api/admin/:admin_id/stories/:story_id` | update a story; change `approved` key to approve or reject a submitted story; requires authorization; | [link](#post-apiusersuser_idstories) |
+| DELETE | `/api/admin/:admin_id/stories/:story_id` | delete a story; requires authorization;                                                               | [link](#post-apiusersuser_idstories) |  |  |  |
 | &nbsp; |
-| GET    | `/api/stories`                 | get all approved stories                                                              | [link](#get-apistoriesstory_id)      |
-| GET    | `/api/stories/:story_id`       | get an approved story                                                                 | [link](#get-apistoriesstory_id)      |
-| PUT    | `/api/stories/:story_id`       | update an approved story;                                                             | [link](#put-apistoriesstory_id)      |
-| DELETE | `/api/stories/:story_id`       | delete an approved story;                                                             | [link](#delete-apistoriesstory_id)   |
+| GET    | `/api/stories`                           | get all approved stories                                                                              | [link](#get-apistoriesstory_id)      |
+| POST   | `/api/stories`                           | create/send a new story; requires `name` and `content`                                                | [link](#post-apistories)             |
+| GET    | `/api/stories/:story_id`                 | get an approved story                                                                                 | [link](#get-apistoriesstory_id)      |
 
 ## Examples
 
