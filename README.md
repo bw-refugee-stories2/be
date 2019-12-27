@@ -45,7 +45,7 @@ test account:
 | DELETE | `/api/admin/:admin_id`                   | delete a admin account; requires authorization                                                        | [link](#delete-apiadminsadmin_id)              |
 | &nbsp; |                                          |                                                                                                       |                                                |
 | GET    | `/api/admin/:admin_id/stories`           | get ALL stories; requires authorization                                                               | [link](#get-apiadminsadmin_idstories)          |
-| GET    | `/api/admin/:admin_id/stories/:story_id` | get a story; requires authorization;                                                                  | [link](#get-apiadminssadmin_idstoriesstory_id) |
+| GET    | `/api/admin/:admin_id/stories/:story_id` | get a story; requires authorization;                                                                  | [link](#get-apiadminsadmin_idstoriesstory_id)  |
 | PUT    | `/api/admin/:admin_id/stories/:story_id` | update a story; change `approved` key to approve or reject a submitted story; requires authorization; | [link](#post-apiadminsadmin_idstoriesstory_id) |
 | DELETE | `/api/admin/:admin_id/stories/:story_id` | delete a story; requires authorization;                                                               | [link](#post-apiadminsadmin_idstoriesstory_id) |  |  |  |
 | &nbsp; |
