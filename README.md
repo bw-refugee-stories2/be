@@ -262,6 +262,6 @@ response data
   "id": 1,
   "name": "Name",
   "story": "Story text",
-  "approved": false
+  "approved": true
 }
 ```
