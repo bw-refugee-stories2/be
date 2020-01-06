@@ -1,5 +1,5 @@
 {
-  "name": "bw-refugee-stories2/be",
+  "name": "bw-refugee-stories2",
   "version": "1.0.0",
   "description": "Authentication Sprint Challenge",
   "main": "index.js",
