@@ -18,6 +18,7 @@
 | id        | integer | _primary key_ and _autoincrements_                                      |
 | name      | string  | _required_; name of the refugee/story                                   |
 | image_URL | string  | refugee/story image                                                     |
+| quote     | text    | story quote                                                             |
 | content   | text    | _required_; story of the refugee                                        |
 | author    | text    | author of the story                                                     |
 | approved  | boolean | whether or not the story has been approved; defaults to _false_ on POST |
@@ -154,12 +155,16 @@ response data
   {
     "id": 1,
     "name": "Name",
+    "quote": "Quote here",
+    "image_URL": "image.com",
     "story": "Story text",
     "approved": true
   },
   {
     "id": 2,
     "name": "Name",
+    "quote": "Quote here",
+    "image_URL": "image.com",
     "story": "Story text",
     "approved": false
   }
@@ -174,6 +179,8 @@ response data
 {
   "id": 1,
   "name": "Name",
+  "quote": "Quote here",
+  "image_URL": "image.com",
   "story": "Story text",
   "approved": false
 }
@@ -186,6 +193,8 @@ request data
 ```json
 {
   "name": "Name",
+  "quote": "Quote here",
+  "image_URL": "image.com",
   "story": "Story text",
   "approved": false
 }
@@ -197,6 +206,8 @@ response data
 {
   "id": 1,
   "name": "Name",
+  "quote": "Quote here",
+  "image_URL": "image.com",
   "story": "Story text",
   "approved": true
 }
@@ -219,12 +230,16 @@ response data
   {
     "id": 1,
     "name": "Name",
+    "quote": "Quote here",
+    "image_URL": "image.com",
     "story": "Story text",
     "approved": true
   },
   {
     "id": 2,
     "name": "Name",
+    "quote": "Quote here",
+    "image_URL": "image.com",
     "story": "Story text",
     "approved": true
   }
@@ -238,6 +253,8 @@ request data
 ```json
 {
   "name": "Name",
+  "quote": "Quote here",
+  "image_URL": "image.com",
   "story": "Story text"
 }
 ```
@@ -248,6 +265,8 @@ response data
 {
   "id": 1,
   "name": "Name",
+  "quote": "Quote here",
+  "image_URL": "image.com",
   "story": "Story text",
   "approved": false
 }
@@ -261,6 +280,8 @@ response data
 {
   "id": 1,
   "name": "Name",
+  "quote": "Quote here",
+  "image_URL": "image.com",
   "story": "Story text",
   "approved": true
 }
