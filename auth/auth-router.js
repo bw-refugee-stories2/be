@@ -38,7 +38,7 @@ router.post("/login", (req, res) => {
     });
 });
 
-function signToken(user) {
+function signToken(admin) {
   const payload = {
     name: admin.name
   };
