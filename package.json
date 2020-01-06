@@ -1,0 +1,32 @@
+{
+  "name": "bw-refugee-stories2",
+  "version": "1.0.0",
+  "description": "Authentication Sprint Challenge",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "test": "jest --watch",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bw-refugee-stories2/be"
+  },
+  "keywords": [],
+  "author": "Brianna Workman",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.6",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
+  }
+}
