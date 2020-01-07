@@ -18,14 +18,20 @@ function findById(id) {
     .first();
 }
 
-function add(story) {
+async function add(story) {
   return db("stories")
     .insert(story)
-    .then(ids => {
-      const [id] = ids;
-      return findById(id);
-    });
+    .returning("id");
 }
+
+// function add(story) {
+//   return db("stories")
+//     .insert(story)
+//     .then(ids => {
+//       const [id] = ids;
+//       return findById(id);
+//     });
+// }
 
 function update(changes, id) {
   return db("stories")
