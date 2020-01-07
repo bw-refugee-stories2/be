@@ -33,7 +33,7 @@ async function add(story) {
 //     });
 // }
 
-function update(changes, id) {
+async function update(changes, id) {
   return db("stories")
     .where({ id })
     .update(changes, "*");
