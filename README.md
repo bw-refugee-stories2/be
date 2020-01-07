@@ -156,7 +156,7 @@ response data
   "name": "Name",
   "quote": "Quote here",
   "image_URL": "image.com",
-  "story": "Story text",
+  "content": "Story text",
   "approved": false
 }
 ```
@@ -170,7 +170,7 @@ request data
   "name": "Name",
   "quote": "Quote here",
   "image_URL": "image.com",
-  "story": "Story text",
+  "content": "Story text",
   "approved": false
 }
 ```
@@ -183,7 +183,7 @@ response data
   "name": "Name",
   "quote": "Quote here",
   "image_URL": "image.com",
-  "story": "Story text",
+  "content": "Story text",
   "approved": true
 }
 ```
@@ -207,7 +207,7 @@ response data
     "name": "Name",
     "quote": "Quote here",
     "image_URL": "image.com",
-    "story": "Story text",
+    "content": "Story text",
     "approved": true
   },
   {
@@ -215,7 +215,7 @@ response data
     "name": "Name",
     "quote": "Quote here",
     "image_URL": "image.com",
-    "story": "Story text",
+    "content": "Story text",
     "approved": true
   }
 ]
@@ -230,7 +230,7 @@ request data
   "name": "Name",
   "quote": "Quote here",
   "image_URL": "image.com",
-  "story": "Story text"
+  "content": "Story text"
 }
 ```
 
@@ -242,7 +242,7 @@ response data
   "name": "Name",
   "quote": "Quote here",
   "image_URL": "image.com",
-  "story": "Story text",
+  "content": "Story text",
   "approved": false
 }
 ```
@@ -257,7 +257,7 @@ response data
   "name": "Name",
   "quote": "Quote here",
   "image_URL": "image.com",
-  "story": "Story text",
+  "content": "Story text",
   "approved": true
 }
 ```
