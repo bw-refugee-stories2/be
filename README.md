@@ -48,7 +48,7 @@ test account:
 | PUT    | `/api/user/:user_id`     | update user info; requires authorization                                                              | [link](#put-apiusersuser_id)       |
 | DELETE | `/api/user/:user_id`     | delete a user account; requires authorization                                                         | [link](#delete-apiusersuser_id)    |
 | &nbsp; |                          |                                                                                                       |                                    |
-| GET    | `/api/stories`           | get all approved stories                                                                              | [link](#get-apistories)            |
+| GET    | `/api/stories`           | get stories                                                                                           | [link](#get-apistories)            |
 | POST   | `/api/stories`           | create/send a new story; requires `name` and `content`                                                | [link](#post-apistories)           |
 | GET    | `/api/stories/:story_id` | get an approved story                                                                                 | [link](#get-apistoriesstory_id)    |
 | PUT    | `/api/stories/:story_id` | update a story; change `approved` key to approve or reject a submitted story; requires authorization; | [link](#put-apistoriesstory_id)    |
