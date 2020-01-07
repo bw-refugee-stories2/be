@@ -32,7 +32,8 @@ test account:
 ```json
 {
   "email": "tester@email.com",
-  "password": "password"
+  "username": "test123",
+  "password": "test"
 }
 ```
 
