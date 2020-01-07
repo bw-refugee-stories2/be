@@ -18,16 +18,16 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", (req, res) => {
   // implement login
-  let { name, password } = req.body;
+  let { username, password } = req.body;
 
-  Admins.getBy({ name })
+  Admins.getBy({ username })
     .first()
     .then(admin => {
       if (admin && bcrypt.compareSync(password, admin.password)) {
         const token = signToken(admin);
         res.status(200).json({
           token: token,
-          message: `Welcome ${admin.name}!`
+          message: `Welcome ${admin.username}!`
         });
       } else {
         res.status(401).json({ message: "Invalid Credentials" });
@@ -40,7 +40,7 @@ router.post("/login", (req, res) => {
 
 function signToken(admin) {
   const payload = {
-    name: admin.name
+    username: admin.username
   };
   const secret = process.env.JWT_SECRET || "it is a secret, is it safe?";
   const options = {

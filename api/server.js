@@ -3,6 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 
 const authRouter = require("../auth/auth-router.js");
+const storiesRouter = require("../stories/stories-router.js");
 
 const server = express();
 
@@ -15,5 +16,6 @@ server.use(cors());
 server.use(express.json());
 
 server.use("/api/auth", authRouter);
+server.use("/api/stories", storiesRouter);
 
 module.exports = server;
