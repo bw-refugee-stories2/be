@@ -1,6 +1,7 @@
 const express = require("express");
 
 const Stories = require("./stories-model.js");
+// const authenticate = require("../auth/authenticate-middleware.js");
 
 const router = express.Router();
 
