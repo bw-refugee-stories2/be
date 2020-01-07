@@ -1,7 +1,7 @@
 const express = require("express");
 
 const Stories = require("./stories-model.js");
-// const authenticate = require("../auth/authenticate-middleware.js");
+const authenticate = require("../auth/authenticate-middleware.js");
 
 const router = express.Router();
 
@@ -45,7 +45,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", authenticate, (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
@@ -64,7 +64,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", authenticate, (req, res) => {
   const { id } = req.params;
 
   Stories.remove(id)

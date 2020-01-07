@@ -24,15 +24,6 @@ async function add(story) {
     .returning("id");
 }
 
-// function add(story) {
-//   return db("stories")
-//     .insert(story)
-//     .then(ids => {
-//       const [id] = ids;
-//       return findById(id);
-//     });
-// }
-
 async function update(changes, id) {
   return db("stories")
     .where({ id })
