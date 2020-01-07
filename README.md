@@ -25,6 +25,8 @@
 
 ## API
 
+BASE URL: https://bw-refugee-stories-2.herokuapp.com/
+
 test account:
 
 ```json
