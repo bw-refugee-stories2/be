@@ -67,7 +67,7 @@ request data:
 {
   "email": "username@email.com",
   "password": "password",
-  "name": "Name"
+  "username": "Name"
 }
 ```
 
@@ -78,7 +78,7 @@ response data:
   "user": {
     "id": 1,
     "email": "username@email.com",
-    "name": "Name"
+    "username": "Name"
   },
   "authorization": "really.long.token"
 }
@@ -90,8 +90,8 @@ request data:
 
 ```json
 {
-  "email": "username@email.com",
-  "password": "password"
+  "username": "test123",
+  "password": "test"
 }
 ```
 
