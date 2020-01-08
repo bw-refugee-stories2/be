@@ -10,7 +10,7 @@ const usersRouter = require("../users/users-router.js");
 const server = express();
 
 server.get("/", (req, res) => {
-  res.status(200).json({ api: "Welcome to the Refugee Stories back end! 🎉" });
+  res.status(200).json({ api: "up", dbenv: process.env.DB_ENV });
 });
 
 server.use(helmet());
