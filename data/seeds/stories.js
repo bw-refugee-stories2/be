@@ -40,6 +40,40 @@ exports.seed = function(knex) {
             "I am currently staying at a guesthouse for minors and families in Paiania, just outside Athens, Greece with my family. I’d like to go to Germany. We already know my family and I were granted permission to relocate to a German city. We are hoping to start a new page in our lives. I wish I could make people love each other – that is my dream.",
           author: "Miranda Cleland at globalgiving.org",
           approved: true
+        },
+        {
+          id: 4,
+          name: "Shahid",
+          image_URL:
+            "https://www.globalgiving.org/learn/wp-content/uploads/2017/06/06-Shahid-GHNI.jpg",
+          quote:
+            "Shahid fled his home in Aleppo, Syria and is currently living is living in an abandoned factory with his wife and other families in Sulaymaniyah, Iraq.",
+          content:
+            "We hid ourselves on the mountain for about eight nights. From the mountain, we saw a battle between [the violent group] and the PKK (Kurdish forces), who fought very courageously. After the sun set, we went to them. They treated us with much respect and took us to a place where there were lots of Yazidis and gave us food. Thus, after eight days of walking between the Iraq and Syrian borders, they helped us reach a quiet region in Northern Iraq. From there, we drove to Sulaymaniyah City.",
+          approved: true
+        },
+        {
+          id: 5,
+          name: "Shafaq",
+          image_URL:
+            "https://www.globalgiving.org/learn/wp-content/uploads/2017/06/08-Shafaq-Middle-East-Childrens-Alliance_800.jpg",
+          quote:
+            "Shafaq fled her home in Dera’a, Syria and is currently living with her family in Bekaa, Lebanon. Shafaq is 14 years old.",
+          content:
+            "I used to have a peaceful life and live in my amazing home in Dera’a. I enjoyed the nature around my house and the food coming from the land. I woke up every morning to the sound of birds singing. The brutality of the civil war forced my family to leave this house and to start the journey to be refugees. Since the start of our journey, we moved a lot in Lebanon and I attended different schools. In the end my family decided to go close to the border with Syria. We came to this area because just we want to survive. My father is working as an electrician and this is the only income for our family. All of my family we are living in a tiny house with one bedroom, a small kitchen and a bathroom. We are considered illegal because we don’t have official documents.",
+          approved: true
+        },
+        {
+          id: 6,
+          name: "Abdul",
+          image_URL:
+            "https://www.globalgiving.org/learn/wp-content/uploads/2017/06/11-Abdul-Aziz-IHPA.jpg",
+          quote:
+            "Abdul fled his home in Homs, Syria and is now living in Amman, Jordan.",
+          content:
+            "Abdul now lives in an apartment building with forty female head of household refugee families in Amman. His father was killed in Syria. He has been seen a number of times in the psychosocial clinic run within the apartment building. Staff from International Humanistic Psychology Association visited his school because of his complaints of being bullied by one particular student. He couldn’t believe they would come to try to help him as he had tried with the school teacher and felt unheard. He said it was one of the best things that had happened for him since they came to Jordan. Abdul hopes to drive buses, likes to help others, and loves soccer.",
+          author: "Miranda Cleland at globalgiving.org",
+          approved: true
         }
       ]);
     });
