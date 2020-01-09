@@ -5,7 +5,7 @@ exports.up = function(knex) {
       .string("name", 255)
       .notNullable()
       .unique();
-    stories.string("image_URL");
+    stories.string("image_URL").notNullable();
     stories.text("quote");
     stories.text("content").notNullable();
     stories.string("author");
