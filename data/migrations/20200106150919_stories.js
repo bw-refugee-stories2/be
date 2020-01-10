@@ -6,7 +6,7 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     stories.string("image_URL").notNullable();
-    stories.text("quote");
+    stories.text("quote", 255);
     stories.text("content").notNullable();
     stories.string("author");
     stories.boolean("approved").defaultTo(false);
