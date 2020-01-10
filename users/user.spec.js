@@ -3,8 +3,12 @@ const usersRouter = require("./users-router");
 const db = require("../data/dbConfig");
 
 describe("usersRouter", function() {
+  beforeEach(async () => {
+    await db("stories").del();
+  });
+
   describe("environment", function() {
-    it("should set environment to testing", function() {
+    it("should set environment to testing", async function() {
       expect(process.env.DB_ENV).toBe("testing");
     });
   });
@@ -14,7 +18,7 @@ describe("usersRouter", function() {
     const password =
       "$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y";
 
-    it("should get users", function() {
+    it("should get users", async function() {
       request(usersRouter)
         .post("/login")
         .send({ username, password })
@@ -31,49 +35,48 @@ describe("usersRouter", function() {
         });
     });
   });
+});
 
-  describe("PUT /:id", function() {
-    const username = "test123";
-    const password =
-      "$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y";
-    const newUsername = "test12345";
+describe("PUT /:id", function() {
+  const username = "test123";
+  const password =
+    "$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y";
 
-    it("should edit a user", function() {
-      request(usersRouter)
-        .post("/login")
-        .send({ username, password })
-        .then(res => {
-          const token = res.body.token;
+  it("should edit a user", async function() {
+    request(usersRouter)
+      .post("/login")
+      .send({ username, password })
+      .then(res => {
+        const token = res.body.token;
 
-          request(usersRouter)
-            .put({ newUsername })
-            .set("Authorization", token)
-            .then(res => {
-              expect(res.status).toBe(200);
-            });
-        });
-    });
+        request(usersRouter)
+          .put("/api/users/2")
+          .set("Authorization", token)
+          .then(res => {
+            expect(res.status).toBe(404);
+          });
+      });
   });
+});
 
-  describe("DELETE /:id", function() {
-    const username = "test123";
-    const password =
-      "$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y";
+describe("DELETE /:id", function() {
+  const username = "test123";
+  const password =
+    "$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y";
 
-    it("should delete a user", function() {
-      request(usersRouter)
-        .post("/login")
-        .send({ username, password })
-        .then(res => {
-          const token = res.body.token;
+  it("should delete a user", function() {
+    request(usersRouter)
+      .post("/login")
+      .send({ username, password })
+      .then(res => {
+        const token = res.body.token;
 
-          request(usersRouter)
-            .delete("/api/users/1")
-            .set("Authorization", token)
-            .then(res => {
-              expect(res.body.removed).toBe("deleted");
-            });
-        });
-    });
+        request(usersRouter)
+          .delete("/api/users/1")
+          .set("Authorization", token)
+          .then(res => {
+            expect(res.body.removed).toBe("deleted");
+          });
+      });
   });
 });
