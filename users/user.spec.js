@@ -3,12 +3,8 @@ const usersRouter = require("./users-router");
 const db = require("../data/dbConfig");
 
 describe("usersRouter", function() {
-  beforeEach(async () => {
-    await db("stories").del();
-  });
-
   describe("environment", function() {
-    it("should set environment to testing", async function() {
+    it("should set environment to testing", function() {
       expect(process.env.DB_ENV).toBe("testing");
     });
   });
@@ -18,7 +14,7 @@ describe("usersRouter", function() {
     const password =
       "$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y";
 
-    it("should get users", async function() {
+    it("should get users", function() {
       request(usersRouter)
         .post("/login")
         .send({ username, password })
@@ -42,7 +38,7 @@ describe("PUT /:id", function() {
   const password =
     "$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y";
 
-  it("should edit a user", async function() {
+  it("should edit a user", function() {
     request(usersRouter)
       .post("/login")
       .send({ username, password })
