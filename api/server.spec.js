@@ -8,13 +8,6 @@ describe("server.js", function() {
     });
 
     describe("GET /", function() {
-      it("should return a 200 OK", function() {
-        return request(server)
-          .get("/")
-          .then(res => {
-            expect(res.status).toBe(200);
-          });
-      });
       it("should return a JSON", function() {
         return request(server)
           .get("/")
